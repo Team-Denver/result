@@ -13,7 +13,7 @@ spec:
         app: result
     spec:
       containers:
-      - name: vote
+      - name: result
         image: iamnilanjan3/result:latest
         ports:
         - containerPort: 80
