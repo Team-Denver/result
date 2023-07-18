@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vote
+  name: result
 spec:
   selector:
     matchLabels:
-      app: vote
+      app: result
   replicas: 1
   template:
     metadata:
       labels:
-        app: vote
+        app: result
     spec:
       containers:
       - name: vote
-        image: iamnilanjan3/vote:latest
+        image: iamnilanjan3/result:latest
         ports:
         - containerPort: 80
 
@@ -22,13 +22,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: vote-service
+  name: result-service
   labels:
-    app: vote
+    app: result
 spec:
   ports:
   - port: 80
     targetPort: 80
   type: LoadBalancer
   selector:
-     app: vote   
+     app: result  
